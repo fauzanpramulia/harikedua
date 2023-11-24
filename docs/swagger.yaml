@@ -1,0 +1,40 @@
+definitions:
+  model.Employee:
+    properties:
+      age:
+        type: integer
+      division:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      id:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /employee:
+    post:
+      consumes:
+      - application/json
+      description: Create a new Employee
+      parameters:
+      - description: Employee
+        in: body
+        name: model.Employee
+        required: true
+        schema:
+          $ref: '#/definitions/model.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Employee'
+      summary: create new Employee
+      tags:
+      - Employee
+swagger: "2.0"
