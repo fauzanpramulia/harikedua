@@ -76,11 +76,11 @@ func Connect() {
 	}
 
 	var(
-		host 		= os.Getenv("DB_HOST")
-		port 		= os.Getenv("DB_PORT")
-		user 		= os.Getenv("DB_USER")
-		password	= os.Getenv("DB_PASSWORD")
-		dbname		= os.Getenv("DB_NAME")	
+		host 		= os.Getenv("PGHOST")
+		port 		= os.Getenv("PGPORT")
+		user 		= os.Getenv("PGUSER")
+		password	= os.Getenv("PGPASSWORD")
+		dbname		= os.Getenv("PGDATABASE")	
 	)
 	psqlInfo := fmt.Sprintf(`
 	host=%s 
