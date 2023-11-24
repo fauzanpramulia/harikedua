@@ -5,6 +5,7 @@ import (
 	"harikedua/config"
 	"harikedua/controller"
 	auth "harikedua/middleware"
+	"os"
 
 	// "net/http"
 
@@ -81,7 +82,11 @@ func main() {
 	// swagger.GET("/*any", echoSwagger.WrapHandler)
 	// route for swagger
 	r.GET("/swagger/*", echoSwagger.WrapHandler)
-	r.Logger.Fatal(r.Start(":9000"))
+	var PORT = os.Getenv("PORT")
+	
+	// r.Logger.Fatal(r.Start(":9000"))
+
+	r.Logger.Fatal(r.Start(":"+PORT))
 
 
 }
